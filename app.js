@@ -28,7 +28,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //Cors definindo quem pode consumir a API, no casso 3000 é o React
 app.use(
   cors({
-    origin: 'https://front-desafio-4.herokuapp.com/',
+    origin: 'https://front-desafio-4.herokuapp.com',
   })
 );
 
