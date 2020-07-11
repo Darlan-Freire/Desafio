@@ -25,9 +25,10 @@ const app = express();
 //define o dominio de origem para consumo do servico
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+//Cors definindo quem pode consumir a API, no casso 3000 é o React
 app.use(
   cors({
-    origin: 'http://localhost:8080',
+    origin: 'http://localhost:3000',
   })
 );
 
