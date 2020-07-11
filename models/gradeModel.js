@@ -22,6 +22,12 @@ export default (mongoose) => {
     },
   });
 
+  schema.method('toJSON', function () {
+    const { __v, __id, ...object } = this.toObject();
+    object.id = _id;
+    return object;
+  });
+
   const grades_schema = mongoose.model('grades', schema, 'grades');
 
   return grades_schema;
