@@ -35,6 +35,11 @@ const findAll = async (req, res) => {
 
   try {
     const data = await Grade.find(condition);
+
+    data.sort((a, b) => {
+      return a.value - b.value;
+    });
+
     res.send(data);
 
     logger.info(`GET /grade`);
